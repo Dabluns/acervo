@@ -1,8 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 
 export function BlackHoleIcon({ 
   className = "w-5 h-5",
-  glowColor = "#4c00ff"
+  glowColor = "#0085ff"
 }: { 
   className?: string;
   glowColor?: string;
@@ -66,4 +66,3 @@ export function BlackHoleIcon({
     </svg>
   );
 }
-

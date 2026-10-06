@@ -129,59 +129,59 @@ const TYPE_META: Record<
 }
 
 const ACCENTS: Record<string, Accent> = {
-  fuchsia: {
-    pill: "bg-warp-400/16",
-    pillSoft: "bg-warp-400/10 text-warp-200",
-    text: "text-warp-300",
-    iconWrap: "bg-warp-400/14",
-    iconText: "text-warp-300",
-    border: "border-warp-400/30",
-    glow: "shadow-[0_0_40px_rgba(119,61,255,0.18)]",
+  blue: {
+    pill: "bg-blue-500/16",
+    pillSoft: "bg-blue-500/10 text-blue-200",
+    text: "text-blue-400",
+    iconWrap: "bg-blue-500/14",
+    iconText: "text-blue-300",
+    border: "border-blue-500/30",
+    glow: "shadow-[0_0_40px_rgba(0,133,255,0.22)]",
   },
-  purple: {
-    pill: "bg-warp-400/16",
-    pillSoft: "bg-warp-400/10 text-warp-200",
-    text: "text-warp-300",
-    iconWrap: "bg-warp-400/14",
-    iconText: "text-warp-300",
-    border: "border-warp-400/30",
-    glow: "shadow-[0_0_40px_rgba(76,0,255,0.16)]",
+  sky: {
+    pill: "bg-sky-500/16",
+    pillSoft: "bg-sky-500/10 text-sky-200",
+    text: "text-sky-300",
+    iconWrap: "bg-sky-500/14",
+    iconText: "text-sky-300",
+    border: "border-sky-500/30",
+    glow: "shadow-[0_0_40px_rgba(56,189,248,0.2)]",
   },
-  pink: {
-    pill: "bg-pink-400/16",
-    pillSoft: "bg-pink-400/10 text-pink-200",
-    text: "text-pink-300",
-    iconWrap: "bg-pink-400/14",
-    iconText: "text-pink-300",
-    border: "border-pink-400/30",
-    glow: "shadow-[0_0_40px_rgba(236,72,153,0.16)]",
-  },
-  violet: {
-    pill: "bg-violet-400/16",
-    pillSoft: "bg-violet-400/10 text-violet-200",
-    text: "text-violet-300",
-    iconWrap: "bg-violet-400/14",
-    iconText: "text-violet-300",
-    border: "border-violet-400/30",
-    glow: "shadow-[0_0_40px_rgba(167,139,250,0.16)]",
+  cyan: {
+    pill: "bg-cyan-500/16",
+    pillSoft: "bg-cyan-500/10 text-cyan-200",
+    text: "text-cyan-300",
+    iconWrap: "bg-cyan-500/14",
+    iconText: "text-cyan-300",
+    border: "border-cyan-500/30",
+    glow: "shadow-[0_0_40px_rgba(6,182,212,0.2)]",
   },
   indigo: {
-    pill: "bg-indigo-400/16",
-    pillSoft: "bg-indigo-400/10 text-indigo-200",
+    pill: "bg-indigo-500/16",
+    pillSoft: "bg-indigo-500/10 text-indigo-200",
     text: "text-indigo-300",
-    iconWrap: "bg-indigo-400/14",
+    iconWrap: "bg-indigo-500/14",
     iconText: "text-indigo-300",
-    border: "border-indigo-400/30",
-    glow: "shadow-[0_0_40px_rgba(99,102,241,0.16)]",
+    border: "border-indigo-500/30",
+    glow: "shadow-[0_0_40px_rgba(99,102,241,0.2)]",
   },
-  rose: {
-    pill: "bg-rose-400/16",
-    pillSoft: "bg-rose-400/10 text-rose-200",
-    text: "text-rose-300",
-    iconWrap: "bg-rose-400/14",
-    iconText: "text-rose-300",
-    border: "border-rose-400/30",
-    glow: "shadow-[0_0_40px_rgba(244,63,94,0.16)]",
+  cobalt: {
+    pill: "bg-blue-600/16",
+    pillSoft: "bg-blue-600/10 text-blue-100",
+    text: "text-blue-300",
+    iconWrap: "bg-blue-600/14",
+    iconText: "text-blue-300",
+    border: "border-blue-600/30",
+    glow: "shadow-[0_0_40px_rgba(37,99,235,0.2)]",
+  },
+  slate: {
+    pill: "bg-slate-500/16",
+    pillSoft: "bg-slate-500/10 text-slate-200",
+    text: "text-slate-300",
+    iconWrap: "bg-slate-500/14",
+    iconText: "text-slate-300",
+    border: "border-slate-500/30",
+    glow: "shadow-[0_0_40px_rgba(148,163,184,0.15)]",
   }
 }
 
@@ -204,34 +204,34 @@ const UNCATEGORIZED_SMART_SECTION: SmartSection = {
 
 const MOTION_CARD_THEMES = [
   {
-    bg: "from-warp-600 via-warp-600 to-indigo-600",
-    panel: "bg-warp-950/24",
-    glow: "bg-warp-200/24",
+    bg: "from-blue-600 via-sky-600 to-blue-800",
+    panel: "bg-blue-950/40",
+    glow: "bg-sky-300/30",
   },
   {
-    bg: "from-warp-600 via-violet-600 to-warp-600",
-    panel: "bg-warp-950/24",
-    glow: "bg-warp-200/24",
+    bg: "from-sky-600 via-blue-600 to-indigo-900",
+    panel: "bg-slate-950/40",
+    glow: "bg-blue-300/30",
   },
   {
-    bg: "from-indigo-600 via-warp-600 to-warp-600",
-    panel: "bg-indigo-950/24",
-    glow: "bg-violet-200/24",
+    bg: "from-indigo-900 via-blue-700 to-sky-600",
+    panel: "bg-blue-950/40",
+    glow: "bg-sky-400/30",
   },
   {
-    bg: "from-pink-600 via-rose-600 to-warp-600",
-    panel: "bg-pink-950/24",
-    glow: "bg-rose-200/24",
+    bg: "from-blue-500 via-sky-500 to-blue-900",
+    panel: "bg-sky-950/40",
+    glow: "bg-blue-400/30",
   },
   {
-    bg: "from-warp-500 via-pink-500 to-warp-500",
-    panel: "bg-warp-950/24",
-    glow: "bg-pink-200/24",
+    bg: "from-cyan-600 via-blue-600 to-slate-900",
+    panel: "bg-slate-950/40",
+    glow: "bg-cyan-300/30",
   },
   {
-    bg: "from-violet-500 via-indigo-500 to-warp-500",
-    panel: "bg-violet-950/24",
-    glow: "bg-indigo-200/24",
+    bg: "from-blue-700 via-sky-600 to-slate-950",
+    panel: "bg-blue-950/40",
+    glow: "bg-sky-200/30",
   },
 ]
 
@@ -1024,7 +1024,7 @@ export default function AcervoUI({
 
   const isAllCategory = activeCategory === ALL_CATEGORY_ID
   const activeCategoryData = categoriesById[activeCategory]
-  const activeAccent = accents[activeCategory] ?? ACCENTS.fuchsia
+  const activeAccent = accents[activeCategory] ?? ACCENTS.blue
 
   const [openGroups, setOpenGroups] = useState<Set<string>>(
     () => new Set(GROUP_BY_CATEGORY[activeCategory] ? [GROUP_BY_CATEGORY[activeCategory]] : ["g-cursos"]),
@@ -1433,7 +1433,7 @@ export default function AcervoUI({
                   </button>
                 </div>
                 <div className="grid gap-6 px-6 py-6 lg:grid-cols-[1.25fr_0.95fr] lg:px-8">
-                  <div className="relative overflow-hidden rounded-[28px] border border-white/8 bg-[linear-gradient(135deg,rgba(30,10,40,0.96),rgba(15,5,20,0.88))] p-6">
+                  <div className="relative overflow-hidden rounded-[28px] border border-white/8 bg-[linear-gradient(135deg,rgba(2,12,32,0.96),rgba(1,4,14,0.94))] p-6">
                     <div className="absolute -right-16 top-0 h-44 w-44 rounded-full bg-warp-400/16 blur-[90px]" />
                     <div className="relative flex h-full flex-col justify-between gap-5">
                       <div>

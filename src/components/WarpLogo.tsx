@@ -8,6 +8,6 @@ type WarpLogoProps = {
 export function WarpLogo({ className = "w-6 h-6" }: WarpLogoProps) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
-    <img src="/warptools-icon.png" alt="" className={`${className} object-contain`} />
+    <img src="/acervoaki-mark.png" alt="" className={`${className} object-contain`} />
   );
 }
