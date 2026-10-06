@@ -182,8 +182,56 @@ const ACCENTS: Record<string, Accent> = {
     iconText: "text-slate-300",
     border: "border-slate-500/30",
     glow: "shadow-[0_0_40px_rgba(148,163,184,0.15)]",
+  },
+  // Aliases for compatibility
+  fuchsia: {
+    pill: "bg-blue-500/16",
+    pillSoft: "bg-blue-500/10 text-blue-200",
+    text: "text-blue-400",
+    iconWrap: "bg-blue-500/14",
+    iconText: "text-blue-300",
+    border: "border-blue-500/30",
+    glow: "shadow-[0_0_40px_rgba(0,133,255,0.22)]",
+  },
+  purple: {
+    pill: "bg-indigo-500/16",
+    pillSoft: "bg-indigo-500/10 text-indigo-200",
+    text: "text-indigo-300",
+    iconWrap: "bg-indigo-500/14",
+    iconText: "text-indigo-300",
+    border: "border-indigo-500/30",
+    glow: "shadow-[0_0_40px_rgba(99,102,241,0.2)]",
+  },
+  pink: {
+    pill: "bg-sky-500/16",
+    pillSoft: "bg-sky-500/10 text-sky-200",
+    text: "text-sky-300",
+    iconWrap: "bg-sky-500/14",
+    iconText: "text-sky-300",
+    border: "border-sky-500/30",
+    glow: "shadow-[0_0_40px_rgba(56,189,248,0.2)]",
+  },
+  violet: {
+    pill: "bg-blue-600/16",
+    pillSoft: "bg-blue-600/10 text-blue-100",
+    text: "text-blue-300",
+    iconWrap: "bg-blue-600/14",
+    iconText: "text-blue-300",
+    border: "border-blue-600/30",
+    glow: "shadow-[0_0_40px_rgba(37,99,235,0.2)]",
+  },
+  rose: {
+    pill: "bg-cyan-500/16",
+    pillSoft: "bg-cyan-500/10 text-cyan-200",
+    text: "text-cyan-300",
+    iconWrap: "bg-cyan-500/14",
+    iconText: "text-cyan-300",
+    border: "border-cyan-500/30",
+    glow: "shadow-[0_0_40px_rgba(6,182,212,0.2)]",
   }
 }
+
+const DEFAULT_ACCENT = ACCENTS.blue
 
 const COLOR_KEYS = Object.keys(ACCENTS)
 const ALL_CATEGORY_ID = "all"
@@ -328,35 +376,35 @@ function getSmartSectionStatsForProducts(sourceProducts: Product[], categoriesBy
 }
 
 function getCategoryColor(name: string): Accent {
-  const n = name.toLowerCase()
-  if (n.includes("afilia")) return ACCENTS.violet
-  if (n.includes("agencia") || n.includes("empresa")) return ACCENTS.fuchsia
-  if (n.includes("aposta") || n.includes("cassin") || n.includes("jogo")) return ACCENTS.rose
-  if (n.includes("automacao") || n.includes("bot")) return ACCENTS.pink
-  if (n.includes("branding") || n.includes("marketing")) return ACCENTS.violet
-  if (n.includes("concurso")) return ACCENTS.violet
-  if (n.includes("contrat")) return ACCENTS.fuchsia
-  if (n.includes("copy")) return ACCENTS.violet
-  if (n.includes("crypto") || n.includes("bitcoin")) return ACCENTS.violet
-  if (n.includes("curso") || n.includes("course")) return ACCENTS.fuchsia
-  if (n.includes("design")) return ACCENTS.rose
-  if (n.includes("ecomm") || n.includes("dropship") || n.includes("loja")) return ACCENTS.pink
-  if (n.includes("financ") || n.includes("invest")) return ACCENTS.pink
-  if (n.includes("planilha")) return ACCENTS.fuchsia
-  if (n.includes("trafego") || n.includes("ads")) return ACCENTS.purple
-  if (n.includes("email")) return ACCENTS.fuchsia
-  if (n.includes("template")) return ACCENTS.violet
-  if (n.includes("video") || n.includes("youtube")) return ACCENTS.rose
-  if (n.includes("instagram") || n.includes("social")) return ACCENTS.rose
-  if (n.includes("ferramenta")) return ACCENTS.pink
-  if (n.includes("black")) return ACCENTS.violet
-  if (n.includes("estrang") || n.includes("global") || n.includes("internacional")) return ACCENTS.fuchsia
-  if (n.includes("infoprod")) return ACCENTS.fuchsia
-  if (n.includes("ebook") || n.includes("livro")) return ACCENTS.fuchsia
+  const n = (name || "").toLowerCase()
+  if (n.includes("afilia")) return ACCENTS.indigo
+  if (n.includes("agencia") || n.includes("empresa")) return ACCENTS.blue
+  if (n.includes("aposta") || n.includes("cassin") || n.includes("jogo")) return ACCENTS.cobalt
+  if (n.includes("automacao") || n.includes("bot")) return ACCENTS.cyan
+  if (n.includes("branding") || n.includes("marketing")) return ACCENTS.sky
+  if (n.includes("concurso")) return ACCENTS.blue
+  if (n.includes("contrat")) return ACCENTS.slate
+  if (n.includes("copy")) return ACCENTS.sky
+  if (n.includes("crypto") || n.includes("bitcoin")) return ACCENTS.cyan
+  if (n.includes("curso") || n.includes("course")) return ACCENTS.blue
+  if (n.includes("design")) return ACCENTS.sky
+  if (n.includes("ecomm") || n.includes("dropship") || n.includes("loja")) return ACCENTS.cyan
+  if (n.includes("financ") || n.includes("invest")) return ACCENTS.cobalt
+  if (n.includes("planilha")) return ACCENTS.cyan
+  if (n.includes("trafego") || n.includes("ads")) return ACCENTS.blue
+  if (n.includes("email")) return ACCENTS.sky
+  if (n.includes("template")) return ACCENTS.indigo
+  if (n.includes("video") || n.includes("youtube")) return ACCENTS.sky
+  if (n.includes("instagram") || n.includes("social")) return ACCENTS.blue
+  if (n.includes("ferramenta")) return ACCENTS.cyan
+  if (n.includes("black")) return ACCENTS.cobalt
+  if (n.includes("estrang") || n.includes("global") || n.includes("internacional")) return ACCENTS.blue
+  if (n.includes("infoprod")) return ACCENTS.sky
+  if (n.includes("ebook") || n.includes("livro")) return ACCENTS.slate
 
   let hash = 0
   for (const char of n) hash = (hash * 31 + char.charCodeAt(0)) | 0
-  return ACCENTS[COLOR_KEYS[Math.abs(hash) % COLOR_KEYS.length]]
+  return ACCENTS[COLOR_KEYS[Math.abs(hash) % COLOR_KEYS.length]] || DEFAULT_ACCENT
 }
 
 function CategoryIcon({
@@ -645,7 +693,7 @@ function ProductCard({
         "card-fade-in glass-card group relative flex h-full cursor-pointer flex-col overflow-hidden rounded-[18px] border border-white/10 p-3",
         "bg-[linear-gradient(180deg,rgba(10,17,33,0.96),rgba(7,10,20,0.92))]",
         "shadow-[0_20px_60px_rgba(2,6,23,0.45)]",
-        accent.glow,
+        accent?.glow || DEFAULT_ACCENT.glow,
       )}
       style={{ animationDelay: `${Math.min(index * 40, 420)}ms` }}
       onClick={() => onPreview(product)}
@@ -688,7 +736,7 @@ function ProductCard({
         </span>
 
         <div className="absolute bottom-3 left-3 right-3 flex items-end justify-between gap-2">
-          <div className={cn("inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em]", accent.border, accent.pillSoft)}>
+          <div className={cn("inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-[10px] font-black uppercase tracking-[0.18em]", accent?.border || DEFAULT_ACCENT.border, accent?.pillSoft || DEFAULT_ACCENT.pillSoft)}>
             <TypeIcon size={12} strokeWidth={2.3} />
             {typeMeta.label}
           </div>
@@ -807,7 +855,7 @@ function SearchResults({
               key={product.id}
               product={product}
               index={index}
-              accent={accents[product.category_id] ?? ACCENTS.fuchsia}
+              accent={accents[product.category_id] ?? DEFAULT_ACCENT}
               categoryName={category?.name ?? "Acervo"}
               onPreview={onPreview}
             />
@@ -866,14 +914,14 @@ function ProductPreviewPanel({
               <img src={product.banner_url} alt={product.name} className="h-full w-full object-cover" />
             ) : (
               <div className="flex h-full w-full items-center justify-center bg-[linear-gradient(135deg,rgba(14,24,44,1),rgba(5,9,18,1))]">
-                <div className={cn("flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10", accent.iconWrap)}>
-                  <CategoryIcon name={category?.name ?? ""} size={34} strokeWidth={1.7} className={accent.iconText} />
+                <div className={cn("flex h-20 w-20 items-center justify-center rounded-2xl border border-white/10", accent?.iconWrap || DEFAULT_ACCENT.iconWrap)}>
+                  <CategoryIcon name={category?.name ?? ""} size={34} strokeWidth={1.7} className={accent?.iconText || DEFAULT_ACCENT.iconText} />
                 </div>
               </div>
             )}
             <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(2,6,23,0.08),rgba(2,6,23,0.82))]" />
             <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4">
-              <div className={cn("inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.16em]", accent.border, accent.pillSoft)}>
+              <div className={cn("inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-[11px] font-black uppercase tracking-[0.16em]", accent?.border || DEFAULT_ACCENT.border, accent?.pillSoft || DEFAULT_ACCENT.pillSoft)}>
                 <TypeIcon size={14} strokeWidth={2.3} />
                 {typeMeta.label}
               </div>
@@ -1264,7 +1312,7 @@ export default function AcervoUI({
                         <ul className="mt-2 space-y-1 pl-4">
                           {groupCategories.map((category) => {
                             const isActive = category.id === activeCategory && !isSearching
-                            const categoryAccent = accents[category.id] ?? ACCENTS.fuchsia
+                            const categoryAccent = accents[category.id] ?? DEFAULT_ACCENT
                             const count = countByCategory[category.id] ?? 0
                             const categorySections = smartSectionsByCategory[category.id] ?? []
                             return (
@@ -1376,10 +1424,10 @@ export default function AcervoUI({
         <header className="border-b border-white/8 bg-[#040814]/78 px-5 py-4 backdrop-blur-xl md:px-8">
           <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
             <div className="flex items-start gap-4">
-              <div className={cn("flex h-16 w-16 shrink-0 items-center justify-center rounded-[26px] border border-white/10", activeAccent.iconWrap)}>
+              <div className={cn("flex h-16 w-16 shrink-0 items-center justify-center rounded-[26px] border border-white/10", activeAccent?.iconWrap || DEFAULT_ACCENT.iconWrap)}>
                 {isAllCategory
-                  ? <Library size={28} strokeWidth={1.9} className={activeAccent.iconText} />
-                  : <CategoryIcon name={activeCategoryData?.name ?? ""} size={28} strokeWidth={1.9} className={activeAccent.iconText} />
+                  ? <Library size={28} strokeWidth={1.9} className={activeAccent?.iconText || DEFAULT_ACCENT.iconText} />
+                  : <CategoryIcon name={activeCategoryData?.name ?? ""} size={28} strokeWidth={1.9} className={activeAccent?.iconText || DEFAULT_ACCENT.iconText} />
                 }
               </div>
               <div>
@@ -1419,7 +1467,7 @@ export default function AcervoUI({
               <section className="glass-panel overflow-hidden rounded-[34px] border border-white/10">
                 <div className="flex items-center justify-between gap-4 border-b border-white/8 px-6 py-4 lg:px-8">
                   <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white/54">
-                    <Sparkles size={12} strokeWidth={2.1} className={activeAccent.iconText} />
+                    <Sparkles size={12} strokeWidth={2.1} className={activeAccent?.iconText || DEFAULT_ACCENT.iconText} />
                     Secoes e formatos
                   </div>
                   <button
@@ -1437,7 +1485,7 @@ export default function AcervoUI({
                     <div className="absolute -right-16 top-0 h-44 w-44 rounded-full bg-warp-400/16 blur-[90px]" />
                     <div className="relative flex h-full flex-col justify-between gap-5">
                       <div>
-                        <div className={cn("mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]", activeAccent.border, activeAccent.pillSoft)}>
+                        <div className={cn("mb-4 inline-flex items-center gap-2 rounded-full border px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em]", activeAccent?.border || DEFAULT_ACCENT.border, activeAccent?.pillSoft || DEFAULT_ACCENT.pillSoft)}>
                           <Sparkles size={12} strokeWidth={2.1} />
                           Destaque inteligente
                         </div>
@@ -1493,8 +1541,8 @@ export default function AcervoUI({
                 aria-label="Expandir painel de secoes"
               >
                 <span className="flex min-w-0 items-center gap-3">
-                  <span className={cn("flex h-14 w-14 shrink-0 items-center justify-center rounded-[24px] border", activeAccent.border, activeAccent.iconWrap)}>
-                    <Sparkles size={24} strokeWidth={2.2} className={activeAccent.iconText} />
+                  <span className={cn("flex h-14 w-14 shrink-0 items-center justify-center rounded-[24px] border", activeAccent?.border || DEFAULT_ACCENT.border, activeAccent?.iconWrap || DEFAULT_ACCENT.iconWrap)}>
+                    <Sparkles size={24} strokeWidth={2.2} className={activeAccent?.iconText || DEFAULT_ACCENT.iconText} />
                   </span>
                   <span className="min-w-0">
                     <span className="block text-sm font-bold text-white">Secoes, formatos e plataformas</span>
@@ -1512,8 +1560,8 @@ export default function AcervoUI({
               <SearchResults products={products} query={debouncedQuery} accents={accents} categoriesById={categoriesById} onPreview={setSelectedProduct} />
             ) : filteredProducts.length === 0 ? (
               <div className="glass-panel flex flex-col items-center justify-center gap-4 rounded-[34px] border border-white/10 px-8 py-24 text-center">
-                <div className={cn("flex h-16 w-16 items-center justify-center rounded-3xl border border-white/10", activeAccent.iconWrap)}>
-                  <FolderOpen size={24} strokeWidth={1.7} className={activeAccent.iconText} />
+                <div className={cn("flex h-16 w-16 items-center justify-center rounded-3xl border border-white/10", activeAccent?.iconWrap || DEFAULT_ACCENT.iconWrap)}>
+                  <FolderOpen size={24} strokeWidth={1.7} className={activeAccent?.iconText || DEFAULT_ACCENT.iconText} />
                 </div>
                 <div>
                   <p className="text-lg font-semibold text-white">Nenhum item nesta colecao</p>
@@ -1600,7 +1648,7 @@ export default function AcervoUI({
                     </h2>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm text-white/54">
-                    <span className={cn("h-2.5 w-2.5 rounded-full", activeAccent.pill)} />
+                    <span className={cn("h-2.5 w-2.5 rounded-full", activeAccent?.pill || DEFAULT_ACCENT.pill)} />
                     {filteredProducts.length.toLocaleString("pt-BR")} itens nesta visao
                   </div>
                 </div>
@@ -1608,7 +1656,7 @@ export default function AcervoUI({
                 <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {visibleProducts.map((product, index) => {
                     const productCategory = categoriesById[product.category_id]
-                    const productAccent = isAllCategory ? accents[product.category_id] ?? ACCENTS.fuchsia : activeAccent
+                    const productAccent = isAllCategory ? accents[product.category_id] ?? DEFAULT_ACCENT : activeAccent
 
                     return (
                       <ProductCard
@@ -1642,7 +1690,7 @@ export default function AcervoUI({
       <ProductPreviewPanel
         product={selectedProduct}
         category={selectedProduct ? categoriesById[selectedProduct.category_id] : undefined}
-        accent={selectedProduct ? accents[selectedProduct.category_id] ?? ACCENTS.fuchsia : ACCENTS.fuchsia}
+        accent={selectedProduct ? accents[selectedProduct.category_id] ?? DEFAULT_ACCENT : DEFAULT_ACCENT}
         onClose={() => setSelectedProduct(null)}
       />
     </div>
